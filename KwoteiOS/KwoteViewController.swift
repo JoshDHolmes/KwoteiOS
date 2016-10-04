@@ -15,13 +15,20 @@ class KwoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.loadQuote()
+    }
+    
+    @IBAction func newKwoteButtonPressed(_ sender: AnyObject) {
+        self.loadQuote()
+    }
+    
+    func loadQuote() {
         KwoteManager().getQuote(category: .Movies) { kwote in
             if let kwote = kwote {
                 self.quoteLabel.text = kwote.quote
                 self.authorLabel.text = kwote.author
             } else {
-                self.presentError(message: "Failed to load a new Kwote. Make sure you're connected to the interwbes.")
+                self.presentError(message: "Failed to load a new Kwote. Make sure you're connected to the interwebs.")
             }
         }
     }

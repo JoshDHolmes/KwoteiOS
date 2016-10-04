@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -28,14 +29,25 @@
                                 <color key="textColor" red="0.1058823529" green="0.61176470589999998" blue="0.64313725489999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qm-NN-ilQ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="hGZ-eK-gxr"/>
+                                </constraints>
+                                <state key="normal" title="New Kwote"/>
+                                <connections>
+                                    <action selector="newKwoteButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xHr-9j-X5d"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Veg-ij-9XW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8zD-lf-R18"/>
-                            <constraint firstItem="Veg-ij-9XW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KwM-Zp-L2v"/>
-                            <constraint firstItem="9wP-Qe-QGv" firstAttribute="trailing" secondItem="Veg-ij-9XW" secondAttribute="trailing" id="SIt-u9-Rpz"/>
-                            <constraint firstAttribute="trailing" secondItem="Veg-ij-9XW" secondAttribute="trailing" id="WEZ-jq-whn"/>
-                            <constraint firstItem="9wP-Qe-QGv" firstAttribute="leading" secondItem="Veg-ij-9XW" secondAttribute="leading" id="WaP-xB-Fhy"/>
+                            <constraint firstItem="1Qm-NN-ilQ" firstAttribute="centerX" secondItem="9wP-Qe-QGv" secondAttribute="centerX" id="GHu-GH-jTq"/>
+                            <constraint firstItem="Veg-ij-9XW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" multiplier="15" constant="16" id="KwM-Zp-L2v"/>
+                            <constraint firstItem="9wP-Qe-QGv" firstAttribute="trailing" secondItem="Veg-ij-9XW" secondAttribute="trailing" constant="30" id="SIt-u9-Rpz"/>
+                            <constraint firstAttribute="trailing" secondItem="Veg-ij-9XW" secondAttribute="trailing" constant="15" id="WEZ-jq-whn"/>
+                            <constraint firstItem="9wP-Qe-QGv" firstAttribute="leading" secondItem="Veg-ij-9XW" secondAttribute="leading" constant="-16" id="WaP-xB-Fhy"/>
+                            <constraint firstItem="1Qm-NN-ilQ" firstAttribute="top" secondItem="9wP-Qe-QGv" secondAttribute="bottom" constant="27" id="avC-Cp-6Os"/>
                             <constraint firstItem="9wP-Qe-QGv" firstAttribute="top" secondItem="Veg-ij-9XW" secondAttribute="bottom" constant="15" id="wz4-L6-uho"/>
                         </constraints>
                     </view>

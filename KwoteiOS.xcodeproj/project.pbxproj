@@ -85,12 +85,10 @@
 			isa = PBXGroup;
 			children = (
 				2C1DFE261DA3BD9D00FE2848 /* Extensions */,
+				2C1DFE291DA3C8C300FE2848 /* Storyboards */,
+				2C1DFE2A1DA3C8CF00FE2848 /* Supporting Files */,
+				2C1DFE2B1DA3C94200FE2848 /* View Controllers */,
 				2C1DFE081DA3AC2800FE2848 /* AppDelegate.swift */,
-				2C1DFE0A1DA3AC2800FE2848 /* KwoteViewController.swift */,
-				2C1DFE0C1DA3AC2800FE2848 /* Main.storyboard */,
-				2C1DFE0F1DA3AC2800FE2848 /* Assets.xcassets */,
-				2C1DFE111DA3AC2800FE2848 /* LaunchScreen.storyboard */,
-				2C1DFE141DA3AC2800FE2848 /* Info.plist */,
 				2C1DFE221DA3B67500FE2848 /* Kwote.swift */,
 				2C1DFE241DA3B85C00FE2848 /* KwoteManager.swift */,
 			);
@@ -112,6 +110,32 @@
 				2C1DFE271DA3BDA700FE2848 /* Data+JSON.swift */,
 			);
 			name = Extensions;
+			sourceTree = "<group>";
+		};
+		2C1DFE291DA3C8C300FE2848 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				2C1DFE0C1DA3AC2800FE2848 /* Main.storyboard */,
+				2C1DFE111DA3AC2800FE2848 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		2C1DFE2A1DA3C8CF00FE2848 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2C1DFE0F1DA3AC2800FE2848 /* Assets.xcassets */,
+				2C1DFE141DA3AC2800FE2848 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2C1DFE2B1DA3C94200FE2848 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2C1DFE0A1DA3AC2800FE2848 /* KwoteViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
