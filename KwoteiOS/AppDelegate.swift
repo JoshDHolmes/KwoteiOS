@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  KwoteiOS
 //
-//  Created by Thomas Shaw on 4/10/2016.
+//  Created by Joshua Holmes on 4/10/2016.
 //  Copyright © 2016 Joshua Holmes. All rights reserved.
 //
 
