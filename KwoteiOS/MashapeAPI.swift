@@ -9,36 +9,18 @@
 import Foundation
 import RealmSwift
 
-struct Property {
-    static let quote = "quote"
-    static let author = "author"
-    static let category = "category"
-}
-
-enum Category: String {
-    case Famous = "famous"
-    case Movies = "movies"
-}
-
-struct Header {
-    static let XMashapeKey = "X-Mashape-Key"
-}
-
-class KwoteManager {
+class MashapeAPI: KwoteAPI {
+    struct Header {
+        static let XMashapeKey = "X-Mashape-Key"
+    }
+    
     let apiKey = "j2Lg2CepGhmshmXFj70zdWgIkoGzp1OSVZvjsnLoSBzQjYcegB"
     let apiURL = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat="
     
-    func getQuote(category: Category, completion: @escaping (Kwote?) -> Void) {
-        let url = URL(string: self.apiURL + category.rawValue)!
-        var request = URLRequest(url: url)
-        request.setValue(self.apiKey, forHTTPHeaderField: Header.XMashapeKey)
-        let session = URLSession.shared
-        let task = session.dataTask(with: request) { data, response, error in
-            DispatchQueue.main.sync {
-                completion(self.kwoteFromData(data: data))
-            }
+    func getKwote(category: Category, completion: @escaping (Kwote?) -> Void) {
+        HTTPClient.request(url: self.apiURL, headers: [Header.XMashapeKey: self.apiKey]) { data, response, error in
+            completion(self.kwoteFromData(data: data))
         }
-        task.resume()
     }
     
     private func kwoteFromData(data: Data?) -> Kwote? {

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11198.2" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -38,21 +38,34 @@
                                     <action selector="newKwoteButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xHr-9j-X5d"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SJ4-RY-dSF">
+                                <segments>
+                                    <segment title="Famous"/>
+                                    <segment title="Movies"/>
+                                    <segment title="Inspire"/>
+                                    <segment title="Mngment."/>
+                                    <segment title="Funny"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Veg-ij-9XW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8zD-lf-R18"/>
                             <constraint firstItem="1Qm-NN-ilQ" firstAttribute="centerX" secondItem="9wP-Qe-QGv" secondAttribute="centerX" id="GHu-GH-jTq"/>
                             <constraint firstItem="Veg-ij-9XW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" multiplier="15" constant="16" id="KwM-Zp-L2v"/>
+                            <constraint firstItem="SJ4-RY-dSF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="L9K-JM-ei0"/>
+                            <constraint firstItem="SJ4-RY-dSF" firstAttribute="centerX" secondItem="Veg-ij-9XW" secondAttribute="centerX" id="Nem-Us-3dt"/>
                             <constraint firstItem="9wP-Qe-QGv" firstAttribute="trailing" secondItem="Veg-ij-9XW" secondAttribute="trailing" constant="30" id="SIt-u9-Rpz"/>
                             <constraint firstAttribute="trailing" secondItem="Veg-ij-9XW" secondAttribute="trailing" constant="15" id="WEZ-jq-whn"/>
                             <constraint firstItem="9wP-Qe-QGv" firstAttribute="leading" secondItem="Veg-ij-9XW" secondAttribute="leading" constant="-16" id="WaP-xB-Fhy"/>
                             <constraint firstItem="1Qm-NN-ilQ" firstAttribute="top" secondItem="9wP-Qe-QGv" secondAttribute="bottom" constant="27" id="avC-Cp-6Os"/>
+                            <constraint firstItem="SJ4-RY-dSF" firstAttribute="leading" secondItem="Veg-ij-9XW" secondAttribute="leading" id="nwc-oq-aac"/>
                             <constraint firstItem="9wP-Qe-QGv" firstAttribute="top" secondItem="Veg-ij-9XW" secondAttribute="bottom" constant="15" id="wz4-L6-uho"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="authorLabel" destination="9wP-Qe-QGv" id="xZe-1f-xFF"/>
+                        <outlet property="categorySegmentedControl" destination="SJ4-RY-dSF" id="ieY-V2-viC"/>
                         <outlet property="quoteLabel" destination="Veg-ij-9XW" id="69w-NP-o4H"/>
                     </connections>
                 </viewController>

@@ -12,6 +12,7 @@ import RealmSwift
 class KwoteViewController: UIViewController {
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var categorySegmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +23,29 @@ class KwoteViewController: UIViewController {
         self.loadQuote()
     }
     
+    func selectedCategory() -> Category {
+        var category: Category
+        
+        switch self.categorySegmentedControl.selectedSegmentIndex {
+        case 0:
+            category = .Famous
+        case 1:
+            category = .Movies
+        case 2:
+            category = .Inspire
+        case 3:
+            category = .Management
+        case 4:
+            category = .Funny
+        default:
+            category = .Famous
+        }
+        
+        return category
+    }
+    
     func loadQuote() {
-        KwoteManager().getQuote(category: .Movies) { kwote in
+        KwoteFactory.getKwote(category: .Famous) { kwote in
             if let kwote = kwote {
                 self.quoteLabel.text = kwote.quote
                 self.authorLabel.text = kwote.author
