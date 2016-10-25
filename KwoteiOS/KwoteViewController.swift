@@ -19,6 +19,10 @@ class KwoteViewController: UIViewController {
     var overlay: UIView?
     var settingsView: UIView?
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loadQuote()
