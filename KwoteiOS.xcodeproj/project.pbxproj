@@ -98,6 +98,7 @@
 		2C1DFE071DA3AC2800FE2848 /* KwoteiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2CD73F991DBFA18700BE62FD /* Resources */,
 				2CD73F921DBF76F800BE62FD /* UI Elements */,
 				2CAA9FC01DB0C01600ACCAD5 /* HTTP */,
 				2CAA9FBD1DB0BC8E00ACCAD5 /* API */,
@@ -181,6 +182,21 @@
 				2CD73F931DBF77F800BE62FD /* KwoteLabel.swift */,
 			);
 			name = "UI Elements";
+			sourceTree = "<group>";
+		};
+		2CD73F991DBFA18700BE62FD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2CD73F9A1DBFA18D00BE62FD /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		2CD73F9A1DBFA18D00BE62FD /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

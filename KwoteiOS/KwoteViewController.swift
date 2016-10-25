@@ -40,42 +40,70 @@ class KwoteViewController: UIViewController {
             return
         }
         
-        if let imageView = self.imageView {
-            imageView.removeFromSuperview()
-        }
-        
-        if let overlay = self.overlay {
-            overlay.removeFromSuperview()
-        }
-        
         let frame = CGRect(x: -(resizedImage.size.width / 2), y: 0, width: resizedImage.size.width, height: resizedImage.size.height)
-        let imageView = UIImageView(frame: frame)
-        imageView.image = resizedImage
-        self.imageView = imageView
-        self.view.insertSubview(imageView, at: 0)
+        let newImageView = UIImageView(frame: frame)
+        newImageView.image = resizedImage
+        
+        if let imageView = self.imageView {
+            UIView.transition(with: self.view, duration: 1.0, options: .transitionCrossDissolve, animations: {
+                self.view.insertSubview(newImageView, aboveSubview: imageView)
+            }, completion: { (success) in
+                self.imageView = newImageView
+                imageView.removeFromSuperview()
+            })
+            return
+        } else {
+            self.imageView = newImageView
+        }
         
         // Apply darkened overlay
         let overlay = UIView(frame: UIScreen.main.bounds)
         overlay.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        self.view.insertSubview(overlay, at: 1)
         self.overlay = overlay
+        
+        self.view.insertSubview(newImageView, at: 0)
+        self.view.insertSubview(overlay, at: 1)
+        
+        newImageView.alpha = 0
+        overlay.alpha = 0
+        
+        UIView.animate(withDuration: 1.0) {
+            newImageView.alpha = 1
+            overlay.alpha = 1
+        }
     }
     
     func removeBackgroundImage() {
+        NSLog("Removing background image")
         
+        guard let imageView = self.imageView, let overlay = self.overlay else {
+            return
+        }
+        
+        self.imageView = nil
+        self.overlay = nil
+        
+        UIView.animate(withDuration: 1.0, animations: {
+            imageView.alpha = 0
+            overlay.alpha = 0
+        }) { (success) in
+            imageView.removeFromSuperview()
+            overlay.removeFromSuperview()
+        }
     }
     
     func loadQuote() {
         KwoteFactory.getKwote(category: .Movies) { kwote in
             if let kwote = kwote {
-                self.quoteLabel.text = kwote.quote
-                self.authorLabel.text = kwote.author
-                
                 MovieDBAPI.getMovieBackdropImage(movieName: kwote.author) { (image) in
+                    
+                    self.quoteLabel.text = kwote.quote
+                    self.authorLabel.text = kwote.author
+                    
                     if let image = image {
                         self.setBackgroundImage(image: image)
                     } else {
-                        //self.imageView.
+                        self.removeBackgroundImage()
                     }
                 }
             } else {

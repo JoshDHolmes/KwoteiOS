@@ -20,7 +20,7 @@ class Kwote: Object {
         self.author = author
         self.category = category
         
-        self.save()
+        //self.save()
     }
     
     func save() {

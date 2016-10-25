@@ -34,6 +34,8 @@ class MovieDBAPI {
                             completion(nil)
                         }
                     }
+                } else {
+                    completion(nil)
                 }
             } else {
                 NSLog("Failed to retrieve movie info: \(error)")
