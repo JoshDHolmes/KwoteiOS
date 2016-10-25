@@ -26,6 +26,9 @@
 		2CD73F941DBF77F800BE62FD /* KwoteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD73F931DBF77F800BE62FD /* KwoteLabel.swift */; };
 		2CD73F961DBF7EA500BE62FD /* MovieDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD73F951DBF7EA500BE62FD /* MovieDBAPI.swift */; };
 		2CD73F981DBF8C8100BE62FD /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD73F971DBF8C8100BE62FD /* UIImage+Resize.swift */; };
+		2CD73F9C1DBFA2CB00BE62FD /* AlexandriaFLF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CD73F9B1DBFA2C400BE62FD /* AlexandriaFLF.ttf */; };
+		2CDA62FF1DBFACDE006DE35F /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2CD73FA21DBFAB9E00BE62FD /* FontAwesome.otf */; };
+		2CDA63011DBFAF14006DE35F /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CDA63001DBFAF11006DE35F /* OpenSans-Light.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -63,6 +66,9 @@
 		2CD73F931DBF77F800BE62FD /* KwoteLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KwoteLabel.swift; sourceTree = "<group>"; };
 		2CD73F951DBF7EA500BE62FD /* MovieDBAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDBAPI.swift; sourceTree = "<group>"; };
 		2CD73F971DBF8C8100BE62FD /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
+		2CD73F9B1DBFA2C400BE62FD /* AlexandriaFLF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlexandriaFLF.ttf; sourceTree = "<group>"; };
+		2CD73FA21DBFAB9E00BE62FD /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		2CDA63001DBFAF11006DE35F /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +201,9 @@
 		2CD73F9A1DBFA18D00BE62FD /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				2CDA63001DBFAF11006DE35F /* OpenSans-Light.ttf */,
+				2CD73FA21DBFAB9E00BE62FD /* FontAwesome.otf */,
+				2CD73F9B1DBFA2C400BE62FD /* AlexandriaFLF.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -260,8 +269,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CDA63011DBFAF14006DE35F /* OpenSans-Light.ttf in Resources */,
 				2C1DFE131DA3AC2800FE2848 /* LaunchScreen.storyboard in Resources */,
+				2CDA62FF1DBFACDE006DE35F /* FontAwesome.otf in Resources */,
 				2C1DFE101DA3AC2800FE2848 /* Assets.xcassets in Resources */,
+				2CD73F9C1DBFA2CB00BE62FD /* AlexandriaFLF.ttf in Resources */,
 				2C1DFE0E1DA3AC2800FE2848 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

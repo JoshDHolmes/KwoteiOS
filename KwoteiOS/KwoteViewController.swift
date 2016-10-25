@@ -12,9 +12,12 @@ import RealmSwift
 class KwoteViewController: UIViewController {
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var loaderIcon: UIActivityIndicatorView!
+    @IBOutlet weak var refreshButton: UIButton!
     
     var imageView: UIImageView?
     var overlay: UIView?
+    var settingsView: UIView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +27,7 @@ class KwoteViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.quoteLabel.layer.borderColor = UIColor.white.cgColor
         self.quoteLabel.layer.borderWidth = 1
+        self.loaderIcon.contentScaleFactor = 1.5
     }
     
     @IBAction func refreshButtonPressed(_ sender: AnyObject) {
@@ -32,8 +36,26 @@ class KwoteViewController: UIViewController {
     
     @IBAction func settingsButtonPressed(_ sender: AnyObject) {
         print("Settings button pressed")
+        self.showSettings()
     }
     
+    @IBAction func shareButtonPressed(_ sender: AnyObject) {
+        guard let quoteText = self.quoteLabel.text, let authorText = self.authorLabel.text else {
+            return
+        }
+        
+        let message = "\"\(quoteText)\" - \(authorText)"
+        var activityItems: [Any] = [message]
+        
+        if let image = self.imageView?.image {
+            activityItems.append(image)
+        }
+        
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
+        self.present(activityVC, animated: true) { 
+            //
+        }
+    }
     func setBackgroundImage(image: UIImage) {
         guard let resizedImage = image.resize(height: UIScreen.main.bounds.height) else {
             NSLog("Failed to resize image")
@@ -93,12 +115,19 @@ class KwoteViewController: UIViewController {
     }
     
     func loadQuote() {
+        self.refreshButton.isHidden = true
+        self.loaderIcon.isHidden = false
+        
         KwoteFactory.getKwote(category: .Movies) { kwote in
             if let kwote = kwote {
+                NSLog("Quote: \(kwote.quote)")
+                NSLog("Author: \(kwote.author)")
                 MovieDBAPI.getMovieBackdropImage(movieName: kwote.author) { (image) in
-                    
+                    self.refreshButton.isHidden = false
+                    self.loaderIcon.isHidden = true
                     self.quoteLabel.text = kwote.quote
                     self.authorLabel.text = kwote.author
+                    self.quoteLabel.isHidden = false
                     
                     if let image = image {
                         self.setBackgroundImage(image: image)
@@ -110,6 +139,38 @@ class KwoteViewController: UIViewController {
                 self.presentError(message: "Failed to load a new Kwote. Make sure you're connected to the interwebs.")
             }
         }
+    }
+    
+    func showSettings() {
+        //let frame = UIScreen.main.bounds
+        //let settingsView = UIView(frame: frame)
+        
+        let visualEffectView = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+        
+        visualEffectView.frame = UIScreen.main.bounds
+        visualEffectView.alpha = 0
+        visualEffectView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(closeSettings)))
+        self.settingsView = visualEffectView
+        self.view.addSubview(visualEffectView)
+        
+        UIView.animate(withDuration: 0.3) {
+            visualEffectView.alpha = 1
+        }
+        
+        let sm = UISegmentedControl()
+        sm.frame.size.height = 50
+        sm.frame.size.width = UIScreen.main.bounds.width - 50
+        
+        visualEffectView.addSubview(sm)
+    }
+    
+    func closeSettings() {
+        print("close settings pressed")
+        guard let settingsView = self.settingsView else {
+            return
+        }
+        
+        settingsView.removeFromSuperview()
     }
     
     func presentError(message: String) {

@@ -3,9 +3,19 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AlexandriaFLF.ttf">
+            <string>AlexandriaFLF</string>
+        </array>
+        <array key="FontAwesome.otf">
+            <string>FontAwesome</string>
+        </array>
+        <array key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Kwote View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -19,55 +29,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quoteText" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veg-ij-9XW" customClass="KwoteLabel" customModule="KwoteiOS" customModuleProvider="target">
-                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="quoteText" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Veg-ij-9XW" customClass="KwoteLabel" customModule="KwoteiOS" customModuleProvider="target">
+                                <fontDescription key="fontDescription" name="AlexandriaFLF" family="AlexandriaFLF" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wP-Qe-QGv">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="DTO-rM-pnx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qm-NN-ilQ">
-                                <state key="normal" title="R"/>
+                            <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qm-NN-ilQ">
+                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="28"/>
+                                <state key="normal" title="">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="refreshButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ELz-t2-OfQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8q-HA-xhu">
-                                <state key="normal" title="S"/>
+                            <button opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8q-HA-xhu">
+                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="28"/>
+                                <state key="normal" title="">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="settingsButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7pV-62-rTu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlC-W2-8HB">
-                                <state key="normal" title="Sh"/>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mlC-W2-8HB">
+                                <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="30"/>
+                                <state key="normal" title="">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rYb-KX-Knl"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wP-Qe-QGv">
+                                <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="90K-vP-n5K"/>
                         </subviews>
                         <color key="backgroundColor" red="0.29411764705882354" green="0.72941176470588232" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Veg-ij-9XW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-6" id="0Fq-Bx-Djf"/>
-                            <constraint firstItem="mlC-W2-8HB" firstAttribute="centerX" secondItem="9wP-Qe-QGv" secondAttribute="centerX" id="1cf-hE-Sqi"/>
-                            <constraint firstItem="R8q-HA-xhu" firstAttribute="trailing" secondItem="9wP-Qe-QGv" secondAttribute="trailing" constant="-10" id="28i-d9-n6h"/>
-                            <constraint firstItem="Veg-ij-9XW" firstAttribute="centerX" secondItem="9wP-Qe-QGv" secondAttribute="centerX" id="52Y-Bc-jw4"/>
-                            <constraint firstItem="Veg-ij-9XW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="KJb-Ky-AXa"/>
-                            <constraint firstItem="Veg-ij-9XW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kxq-pe-ajH"/>
-                            <constraint firstItem="R8q-HA-xhu" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-10" id="OWC-Fm-hP9"/>
-                            <constraint firstItem="1Qm-NN-ilQ" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-10" id="RQF-gQ-da6"/>
-                            <constraint firstItem="1Qm-NN-ilQ" firstAttribute="leading" secondItem="9wP-Qe-QGv" secondAttribute="leading" constant="10" id="Wq7-1z-cB8"/>
-                            <constraint firstItem="9wP-Qe-QGv" firstAttribute="top" secondItem="Veg-ij-9XW" secondAttribute="bottom" constant="30" id="cHa-I7-YFm"/>
-                            <constraint firstItem="9wP-Qe-QGv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jz5-8B-7ec"/>
-                            <constraint firstItem="mlC-W2-8HB" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-10" id="uBt-rD-iq9"/>
+                            <constraint firstItem="Veg-ij-9XW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="9yF-sx-nkz"/>
+                            <constraint firstItem="90K-vP-n5K" firstAttribute="centerX" secondItem="1Qm-NN-ilQ" secondAttribute="centerX" id="AbQ-FW-xa4"/>
+                            <constraint firstItem="9wP-Qe-QGv" firstAttribute="top" secondItem="Veg-ij-9XW" secondAttribute="bottom" constant="20" id="JGa-PA-at8"/>
+                            <constraint firstItem="Veg-ij-9XW" firstAttribute="centerX" secondItem="9wP-Qe-QGv" secondAttribute="centerX" id="K95-Wr-ivK"/>
+                            <constraint firstAttribute="trailing" secondItem="Veg-ij-9XW" secondAttribute="trailing" constant="30" id="OmW-Op-GVI"/>
+                            <constraint firstItem="1Qm-NN-ilQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="SPp-IT-lKi"/>
+                            <constraint firstItem="mlC-W2-8HB" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-10" id="YcC-5B-04E"/>
+                            <constraint firstItem="mlC-W2-8HB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aq2-YW-ZRY"/>
+                            <constraint firstItem="1Qm-NN-ilQ" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-10" id="eZd-Bv-MEN"/>
+                            <constraint firstItem="Veg-ij-9XW" firstAttribute="centerX" secondItem="mlC-W2-8HB" secondAttribute="centerX" id="kxl-5L-yrt"/>
+                            <constraint firstItem="R8q-HA-xhu" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-10" id="qoc-ZX-5E6"/>
+                            <constraint firstItem="90K-vP-n5K" firstAttribute="centerY" secondItem="1Qm-NN-ilQ" secondAttribute="centerY" id="sfW-IT-nHS"/>
+                            <constraint firstItem="Veg-ij-9XW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tuH-st-LEp"/>
+                            <constraint firstAttribute="trailing" secondItem="R8q-HA-xhu" secondAttribute="trailing" constant="10" id="xqw-VL-XbO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="authorLabel" destination="9wP-Qe-QGv" id="xZe-1f-xFF"/>
+                        <outlet property="loaderIcon" destination="90K-vP-n5K" id="y7D-XQ-ujK"/>
                         <outlet property="quoteLabel" destination="Veg-ij-9XW" id="69w-NP-o4H"/>
+                        <outlet property="refreshButton" destination="1Qm-NN-ilQ" id="DY3-Ti-bMy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
