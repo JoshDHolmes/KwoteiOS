@@ -23,6 +23,9 @@
 		2CAA9FBC1DB0BC6700ACCAD5 /* KwoteAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAA9FBB1DB0BC6700ACCAD5 /* KwoteAPI.swift */; };
 		2CAA9FBF1DB0BFF700ACCAD5 /* TheySaidSoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAA9FBE1DB0BFF700ACCAD5 /* TheySaidSoAPI.swift */; };
 		2CAA9FC21DB0C02300ACCAD5 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAA9FC11DB0C02300ACCAD5 /* HTTPClient.swift */; };
+		2CD73F941DBF77F800BE62FD /* KwoteLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD73F931DBF77F800BE62FD /* KwoteLabel.swift */; };
+		2CD73F961DBF7EA500BE62FD /* MovieDBAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD73F951DBF7EA500BE62FD /* MovieDBAPI.swift */; };
+		2CD73F981DBF8C8100BE62FD /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD73F971DBF8C8100BE62FD /* UIImage+Resize.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +60,9 @@
 		2CAA9FBB1DB0BC6700ACCAD5 /* KwoteAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KwoteAPI.swift; sourceTree = "<group>"; };
 		2CAA9FBE1DB0BFF700ACCAD5 /* TheySaidSoAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TheySaidSoAPI.swift; sourceTree = "<group>"; };
 		2CAA9FC11DB0C02300ACCAD5 /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		2CD73F931DBF77F800BE62FD /* KwoteLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KwoteLabel.swift; sourceTree = "<group>"; };
+		2CD73F951DBF7EA500BE62FD /* MovieDBAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDBAPI.swift; sourceTree = "<group>"; };
+		2CD73F971DBF8C8100BE62FD /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Resize.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +98,7 @@
 		2C1DFE071DA3AC2800FE2848 /* KwoteiOS */ = {
 			isa = PBXGroup;
 			children = (
+				2CD73F921DBF76F800BE62FD /* UI Elements */,
 				2CAA9FC01DB0C01600ACCAD5 /* HTTP */,
 				2CAA9FBD1DB0BC8E00ACCAD5 /* API */,
 				2C1DFE261DA3BD9D00FE2848 /* Extensions */,
@@ -118,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				2C1DFE271DA3BDA700FE2848 /* Data+JSON.swift */,
+				2CD73F971DBF8C8100BE62FD /* UIImage+Resize.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -154,6 +162,7 @@
 				2C1DFE241DA3B85C00FE2848 /* MashapeAPI.swift */,
 				2CAA9FBB1DB0BC6700ACCAD5 /* KwoteAPI.swift */,
 				2CAA9FBE1DB0BFF700ACCAD5 /* TheySaidSoAPI.swift */,
+				2CD73F951DBF7EA500BE62FD /* MovieDBAPI.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -164,6 +173,14 @@
 				2CAA9FC11DB0C02300ACCAD5 /* HTTPClient.swift */,
 			);
 			name = HTTP;
+			sourceTree = "<group>";
+		};
+		2CD73F921DBF76F800BE62FD /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				2CD73F931DBF77F800BE62FD /* KwoteLabel.swift */,
+			);
+			name = "UI Elements";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,8 +262,11 @@
 				2C1DFE231DA3B67500FE2848 /* Kwote.swift in Sources */,
 				2CAA9FBC1DB0BC6700ACCAD5 /* KwoteAPI.swift in Sources */,
 				2C1DFE251DA3B85C00FE2848 /* MashapeAPI.swift in Sources */,
+				2CD73F981DBF8C8100BE62FD /* UIImage+Resize.swift in Sources */,
+				2CD73F961DBF7EA500BE62FD /* MovieDBAPI.swift in Sources */,
 				2CAA9FC21DB0C02300ACCAD5 /* HTTPClient.swift in Sources */,
 				2CAA9FBF1DB0BFF700ACCAD5 /* TheySaidSoAPI.swift in Sources */,
+				2CD73F941DBF77F800BE62FD /* KwoteLabel.swift in Sources */,
 				2C1DFE091DA3AC2800FE2848 /* AppDelegate.swift in Sources */,
 				2CAA9FBA1DB0BBAE00ACCAD5 /* KwoteFactory.swift in Sources */,
 			);

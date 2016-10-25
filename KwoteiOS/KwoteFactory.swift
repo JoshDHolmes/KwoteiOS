@@ -12,8 +12,6 @@ enum Category: String {
     case Famous = "famous"
     case Movies = "movies"
     case Inspire = "inspire"
-    case Management = "management"
-    case Funny = "funny"
 }
 
 /**
@@ -26,7 +24,7 @@ class KwoteFactory {
         switch category {
         case .Famous, .Movies:
             api = MashapeAPI()
-        case .Inspire, .Management, .Funny:
+        case .Inspire:
             api = TheySaidSoAPI()
         }
         

@@ -2,7 +2,7 @@
 //  TheySaidSoAPI.swift
 //  KwoteiOS
 //
-//  Created by Thomas Shaw on 14/10/16.
+//  Created by Joshua Holmes on 14/10/16.
 //  Copyright © 2016 Joshua Holmes. All rights reserved.
 //
 

@@ -2,7 +2,7 @@
 //  KwoteManager.swift
 //  KwoteiOS
 //
-//  Created by Thomas Shaw on 4/10/2016.
+//  Created by Joshua Holmes on 4/10/2016.
 //  Copyright © 2016 Joshua Holmes. All rights reserved.
 //
 
@@ -18,7 +18,7 @@ class MashapeAPI: KwoteAPI {
     let apiURL = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat="
     
     func getKwote(category: Category, completion: @escaping (Kwote?) -> Void) {
-        HTTPClient.request(url: self.apiURL, headers: [Header.XMashapeKey: self.apiKey]) { data, response, error in
+        HTTPClient.request(url: self.apiURL + category.rawValue, headers: [Header.XMashapeKey: self.apiKey]) { data, response, error in
             completion(self.kwoteFromData(data: data))
         }
     }

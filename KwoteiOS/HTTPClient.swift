@@ -17,6 +17,7 @@ class HTTPClient {
     }
     
     static func request(url: String, headers: [String:String]?, completion: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        print("*** URL: \(url)")
         guard let requestURL = URL(string: url) else {
             NSLog("The URL is invalid: \(url)")
             return
