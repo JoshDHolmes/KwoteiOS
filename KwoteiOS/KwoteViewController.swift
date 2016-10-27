@@ -14,10 +14,16 @@ class KwoteViewController: UIViewController {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var loaderIcon: UIActivityIndicatorView!
     @IBOutlet weak var refreshButton: UIButton!
-    
+    var famousButton: CategoryButton!
+    var moviesButton: CategoryButton!
+    var inspireButton: CategoryButton!
+
     var imageView: UIImageView?
     var overlay: UIView?
     var settingsView: UIView?
+    var settingsBar: UIView?
+    
+    var category: Category = .Movies
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -25,6 +31,7 @@ class KwoteViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupSettingsView()
         self.loadQuote()
     }
     
@@ -39,7 +46,6 @@ class KwoteViewController: UIViewController {
     }
     
     @IBAction func settingsButtonPressed(_ sender: AnyObject) {
-        print("Settings button pressed")
         self.showSettings()
     }
     
@@ -60,6 +66,54 @@ class KwoteViewController: UIViewController {
             //
         }
     }
+    
+    func setupSettingsView() {
+        let settingsBarWidth = CGFloat(300)
+        let xPos = (UIScreen.main.bounds.width - settingsBarWidth) / 2
+        let frame = CGRect(x: xPos, y: UIScreen.main.bounds.height - settingsBarWidth, width: 300, height: 80)
+        let settingsBar = UIView(frame: frame)
+        
+        self.famousButton = CategoryButton(title: "Famous", icon: "")
+        self.moviesButton = CategoryButton(title: "Movies", icon: "")
+        self.inspireButton = CategoryButton(title: "Inspiration", icon: "")
+        
+        self.moviesButton.frame = moviesButton.frame.offsetBy(dx: 99, dy: 0)
+        self.inspireButton.frame = inspireButton.frame.offsetBy(dx: 198, dy: 0)
+        
+        self.famousButton.pressableButton.addTarget(self, action: #selector(famousButtonPressed), for: .touchUpInside)
+        self.moviesButton.pressableButton.addTarget(self, action: #selector(moviesButtonPressed), for: .touchUpInside)
+        self.inspireButton.pressableButton.addTarget(self, action: #selector(inspireButtonPressed), for: .touchUpInside)
+        
+        settingsBar.addSubview(famousButton)
+        settingsBar.addSubview(moviesButton)
+        settingsBar.addSubview(inspireButton)
+        
+        self.view.addSubview(settingsBar)
+        self.view.bringSubview(toFront: settingsBar)
+        self.settingsBar = settingsBar
+    }
+    
+    func famousButtonPressed() {
+        self.category = .Famous
+        self.famousButton.isSelected = true
+        self.moviesButton.isSelected = false
+        self.inspireButton.isSelected = false
+    }
+    
+    func moviesButtonPressed() {
+        self.category = .Movies
+        self.famousButton.isSelected = false
+        self.moviesButton.isSelected = true
+        self.inspireButton.isSelected = false
+    }
+    
+    func inspireButtonPressed() {
+        self.category = .Inspire
+        self.famousButton.isSelected = false
+        self.moviesButton.isSelected = false
+        self.inspireButton.isSelected = true
+    }
+    
     func setBackgroundImage(image: UIImage) {
         guard let resizedImage = image.resize(height: UIScreen.main.bounds.height) else {
             NSLog("Failed to resize image")
@@ -122,7 +176,7 @@ class KwoteViewController: UIViewController {
         self.refreshButton.isHidden = true
         self.loaderIcon.isHidden = false
         
-        KwoteFactory.getKwote(category: .Movies) { kwote in
+        KwoteFactory.getKwote(category: self.category) { kwote in
             if let kwote = kwote {
                 NSLog("Quote: \(kwote.quote)")
                 NSLog("Author: \(kwote.author)")
@@ -157,7 +211,7 @@ class KwoteViewController: UIViewController {
         self.settingsView = visualEffectView
         self.view.addSubview(visualEffectView)
         
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.2) {
             visualEffectView.alpha = 1
         }
         
@@ -166,12 +220,27 @@ class KwoteViewController: UIViewController {
         sm.frame.size.width = UIScreen.main.bounds.width - 50
         
         visualEffectView.addSubview(sm)
+        
+        guard let settingsBar = self.settingsBar else {
+            return
+        }
+        
+        self.view.bringSubview(toFront: settingsBar)
+        
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.3, options: UIViewAnimationOptions.beginFromCurrentState, animations: {
+            settingsBar.frame.origin.y = UIScreen.main.bounds.height - 150
+            }, completion: nil)
+        
     }
     
     func closeSettings() {
         print("close settings pressed")
-        guard let settingsView = self.settingsView else {
+        guard let settingsView = self.settingsView, let settingsBar = self.settingsBar else {
             return
+        }
+        
+        UIView.animate(withDuration: 0.15) {
+            settingsBar.frame.origin.y = UIScreen.main.bounds.height
         }
         
         settingsView.removeFromSuperview()

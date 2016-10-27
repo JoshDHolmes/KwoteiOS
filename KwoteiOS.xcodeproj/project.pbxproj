@@ -10,7 +10,6 @@
 		2C1DFE091DA3AC2800FE2848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DFE081DA3AC2800FE2848 /* AppDelegate.swift */; };
 		2C1DFE0B1DA3AC2800FE2848 /* KwoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1DFE0A1DA3AC2800FE2848 /* KwoteViewController.swift */; };
 		2C1DFE0E1DA3AC2800FE2848 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DFE0C1DA3AC2800FE2848 /* Main.storyboard */; };
-		2C1DFE101DA3AC2800FE2848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DFE0F1DA3AC2800FE2848 /* Assets.xcassets */; };
 		2C1DFE131DA3AC2800FE2848 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C1DFE111DA3AC2800FE2848 /* LaunchScreen.storyboard */; };
 		2C1DFE1D1DA3B2BA00FE2848 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1DFE1B1DA3B2BA00FE2848 /* Realm.framework */; };
 		2C1DFE1E1DA3B2BA00FE2848 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C1DFE1C1DA3B2BA00FE2848 /* RealmSwift.framework */; };
@@ -29,6 +28,9 @@
 		2CD73F9C1DBFA2CB00BE62FD /* AlexandriaFLF.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CD73F9B1DBFA2C400BE62FD /* AlexandriaFLF.ttf */; };
 		2CDA62FF1DBFACDE006DE35F /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2CD73FA21DBFAB9E00BE62FD /* FontAwesome.otf */; };
 		2CDA63011DBFAF14006DE35F /* OpenSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2CDA63001DBFAF11006DE35F /* OpenSans-Light.ttf */; };
+		2CFDEDE11DC230B4001A4327 /* UIColor+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDEDE01DC230B4001A4327 /* UIColor+Custom.swift */; };
+		2CFDEDE31DC2388B001A4327 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CFDEDE21DC2388B001A4327 /* Assets.xcassets */; };
+		2CFDEDE51DC23A1E001A4327 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CFDEDE41DC23A1E001A4327 /* CategoryButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,7 +53,6 @@
 		2C1DFE081DA3AC2800FE2848 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C1DFE0A1DA3AC2800FE2848 /* KwoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwoteViewController.swift; sourceTree = "<group>"; };
 		2C1DFE0D1DA3AC2800FE2848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2C1DFE0F1DA3AC2800FE2848 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C1DFE121DA3AC2800FE2848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C1DFE141DA3AC2800FE2848 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C1DFE1B1DA3B2BA00FE2848 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
@@ -69,6 +70,9 @@
 		2CD73F9B1DBFA2C400BE62FD /* AlexandriaFLF.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AlexandriaFLF.ttf; sourceTree = "<group>"; };
 		2CD73FA21DBFAB9E00BE62FD /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		2CDA63001DBFAF11006DE35F /* OpenSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Light.ttf"; sourceTree = "<group>"; };
+		2CFDEDE01DC230B4001A4327 /* UIColor+Custom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Custom.swift"; sourceTree = "<group>"; };
+		2CFDEDE21DC2388B001A4327 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2CFDEDE41DC23A1E001A4327 /* CategoryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 			children = (
 				2C1DFE271DA3BDA700FE2848 /* Data+JSON.swift */,
 				2CD73F971DBF8C8100BE62FD /* UIImage+Resize.swift */,
+				2CFDEDE01DC230B4001A4327 /* UIColor+Custom.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -149,7 +154,7 @@
 		2C1DFE2A1DA3C8CF00FE2848 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2C1DFE0F1DA3AC2800FE2848 /* Assets.xcassets */,
+				2CFDEDE21DC2388B001A4327 /* Assets.xcassets */,
 				2C1DFE141DA3AC2800FE2848 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -186,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				2CD73F931DBF77F800BE62FD /* KwoteLabel.swift */,
+				2CFDEDE41DC23A1E001A4327 /* CategoryButton.swift */,
 			);
 			name = "UI Elements";
 			sourceTree = "<group>";
@@ -272,8 +278,8 @@
 				2CDA63011DBFAF14006DE35F /* OpenSans-Light.ttf in Resources */,
 				2C1DFE131DA3AC2800FE2848 /* LaunchScreen.storyboard in Resources */,
 				2CDA62FF1DBFACDE006DE35F /* FontAwesome.otf in Resources */,
-				2C1DFE101DA3AC2800FE2848 /* Assets.xcassets in Resources */,
 				2CD73F9C1DBFA2CB00BE62FD /* AlexandriaFLF.ttf in Resources */,
+				2CFDEDE31DC2388B001A4327 /* Assets.xcassets in Resources */,
 				2C1DFE0E1DA3AC2800FE2848 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,6 +299,8 @@
 				2CD73F981DBF8C8100BE62FD /* UIImage+Resize.swift in Sources */,
 				2CD73F961DBF7EA500BE62FD /* MovieDBAPI.swift in Sources */,
 				2CAA9FC21DB0C02300ACCAD5 /* HTTPClient.swift in Sources */,
+				2CFDEDE11DC230B4001A4327 /* UIColor+Custom.swift in Sources */,
+				2CFDEDE51DC23A1E001A4327 /* CategoryButton.swift in Sources */,
 				2CAA9FBF1DB0BFF700ACCAD5 /* TheySaidSoAPI.swift in Sources */,
 				2CD73F941DBF77F800BE62FD /* KwoteLabel.swift in Sources */,
 				2C1DFE091DA3AC2800FE2848 /* AppDelegate.swift in Sources */,
