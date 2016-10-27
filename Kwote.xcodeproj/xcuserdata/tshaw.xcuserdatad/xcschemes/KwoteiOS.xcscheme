@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2C1DFE041DA3AC2800FE2848"
-               BuildableName = "KwoteiOS.app"
-               BlueprintName = "KwoteiOS"
-               ReferencedContainer = "container:KwoteiOS.xcodeproj">
+               BuildableName = "Kwote.app"
+               BlueprintName = "Kwote"
+               ReferencedContainer = "container:Kwote.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2C1DFE041DA3AC2800FE2848"
-            BuildableName = "KwoteiOS.app"
-            BlueprintName = "KwoteiOS"
-            ReferencedContainer = "container:KwoteiOS.xcodeproj">
+            BuildableName = "Kwote.app"
+            BlueprintName = "Kwote"
+            ReferencedContainer = "container:Kwote.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2C1DFE041DA3AC2800FE2848"
-            BuildableName = "KwoteiOS.app"
-            BlueprintName = "KwoteiOS"
-            ReferencedContainer = "container:KwoteiOS.xcodeproj">
+            BuildableName = "Kwote.app"
+            BlueprintName = "Kwote"
+            ReferencedContainer = "container:Kwote.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <EnvironmentVariables>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2C1DFE041DA3AC2800FE2848"
-            BuildableName = "KwoteiOS.app"
-            BlueprintName = "KwoteiOS"
-            ReferencedContainer = "container:KwoteiOS.xcodeproj">
+            BuildableName = "Kwote.app"
+            BlueprintName = "Kwote"
+            ReferencedContainer = "container:Kwote.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

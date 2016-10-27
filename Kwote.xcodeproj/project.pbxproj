@@ -30,7 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C1DFE051DA3AC2800FE2848 /* KwoteiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KwoteiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C1DFE051DA3AC2800FE2848 /* Kwote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kwote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C1DFE081DA3AC2800FE2848 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2C1DFE0A1DA3AC2800FE2848 /* KwoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KwoteViewController.swift; sourceTree = "<group>"; };
 		2C1DFE0D1DA3AC2800FE2848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -76,7 +76,7 @@
 		2C1DFE061DA3AC2800FE2848 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2C1DFE051DA3AC2800FE2848 /* KwoteiOS.app */,
+				2C1DFE051DA3AC2800FE2848 /* Kwote.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,9 +184,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2C1DFE041DA3AC2800FE2848 /* KwoteiOS */ = {
+		2C1DFE041DA3AC2800FE2848 /* Kwote */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2C1DFE171DA3AC2800FE2848 /* Build configuration list for PBXNativeTarget "KwoteiOS" */;
+			buildConfigurationList = 2C1DFE171DA3AC2800FE2848 /* Build configuration list for PBXNativeTarget "Kwote" */;
 			buildPhases = (
 				2C1DFE011DA3AC2800FE2848 /* Sources */,
 				2C1DFE021DA3AC2800FE2848 /* Frameworks */,
@@ -196,9 +196,9 @@
 			);
 			dependencies = (
 			);
-			name = KwoteiOS;
+			name = Kwote;
 			productName = KwoteiOS;
-			productReference = 2C1DFE051DA3AC2800FE2848 /* KwoteiOS.app */;
+			productReference = 2C1DFE051DA3AC2800FE2848 /* Kwote.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -218,7 +218,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2C1DFE001DA3AC2800FE2848 /* Build configuration list for PBXProject "KwoteiOS" */;
+			buildConfigurationList = 2C1DFE001DA3AC2800FE2848 /* Build configuration list for PBXProject "Kwote" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -231,7 +231,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2C1DFE041DA3AC2800FE2848 /* KwoteiOS */,
+				2C1DFE041DA3AC2800FE2848 /* Kwote */,
 			);
 		};
 /* End PBXProject section */
@@ -426,7 +426,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2C1DFE001DA3AC2800FE2848 /* Build configuration list for PBXProject "KwoteiOS" */ = {
+		2C1DFE001DA3AC2800FE2848 /* Build configuration list for PBXProject "Kwote" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C1DFE151DA3AC2800FE2848 /* Debug */,
@@ -435,7 +435,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2C1DFE171DA3AC2800FE2848 /* Build configuration list for PBXNativeTarget "KwoteiOS" */ = {
+		2C1DFE171DA3AC2800FE2848 /* Build configuration list for PBXNativeTarget "Kwote" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2C1DFE181DA3AC2800FE2848 /* Debug */,

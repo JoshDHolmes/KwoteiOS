@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:KwoteiOS.xcodeproj">
+      location = "self:/Users/tshaw/dev/KwoteiOS/Kwote.xcodeproj">
    </FileRef>
 </Workspace>
