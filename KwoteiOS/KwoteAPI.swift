@@ -12,6 +12,9 @@ struct Property {
     static let quote = "quote"
     static let author = "author"
     static let category = "category"
+    static let date = "date"
+    static let image = "image"
+    static let settingsCategory = "settingsCategory"
 }
 
 /**

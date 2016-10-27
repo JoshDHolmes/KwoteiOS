@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -68,11 +69,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="90K-vP-n5K"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="fyv-cb-GJh"/>
                         </subviews>
                         <color key="backgroundColor" red="0.29411764705882354" green="0.72941176470588232" blue="0.49803921568627452" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="fyv-cb-GJh" firstAttribute="centerX" secondItem="Veg-ij-9XW" secondAttribute="centerX" id="2jS-oq-512"/>
+                            <constraint firstItem="fyv-cb-GJh" firstAttribute="centerY" secondItem="Veg-ij-9XW" secondAttribute="centerY" id="6TU-eW-nCc"/>
                             <constraint firstItem="Veg-ij-9XW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="9yF-sx-nkz"/>
                             <constraint firstItem="90K-vP-n5K" firstAttribute="centerX" secondItem="1Qm-NN-ilQ" secondAttribute="centerX" id="AbQ-FW-xa4"/>
+                            <constraint firstItem="fyv-cb-GJh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="203" id="Afs-Xd-Mj0"/>
                             <constraint firstItem="9wP-Qe-QGv" firstAttribute="top" secondItem="Veg-ij-9XW" secondAttribute="bottom" constant="20" id="JGa-PA-at8"/>
                             <constraint firstItem="Veg-ij-9XW" firstAttribute="centerX" secondItem="9wP-Qe-QGv" secondAttribute="centerX" id="K95-Wr-ivK"/>
                             <constraint firstAttribute="trailing" secondItem="Veg-ij-9XW" secondAttribute="trailing" constant="30" id="OmW-Op-GVI"/>
@@ -84,12 +89,14 @@
                             <constraint firstItem="R8q-HA-xhu" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" constant="-10" id="qoc-ZX-5E6"/>
                             <constraint firstItem="90K-vP-n5K" firstAttribute="centerY" secondItem="1Qm-NN-ilQ" secondAttribute="centerY" id="sfW-IT-nHS"/>
                             <constraint firstItem="Veg-ij-9XW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tuH-st-LEp"/>
+                            <constraint firstItem="fyv-cb-GJh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="61" id="udB-yq-CEk"/>
                             <constraint firstAttribute="trailing" secondItem="R8q-HA-xhu" secondAttribute="trailing" constant="10" id="xqw-VL-XbO"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="authorLabel" destination="9wP-Qe-QGv" id="xZe-1f-xFF"/>
                         <outlet property="loaderIcon" destination="90K-vP-n5K" id="y7D-XQ-ujK"/>
+                        <outlet property="logoImage" destination="fyv-cb-GJh" id="O4w-z5-egJ"/>
                         <outlet property="quoteLabel" destination="Veg-ij-9XW" id="69w-NP-o4H"/>
                         <outlet property="refreshButton" destination="1Qm-NN-ilQ" id="DY3-Ti-bMy"/>
                     </connections>
@@ -99,5 +106,8 @@
             <point key="canvasLocation" x="37.600000000000001" y="127.28635682158921"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="1024" height="1024"/>
+    </resources>
     <color key="tintColor" name="selectedMenuItemColor" catalog="System" colorSpace="catalog"/>
 </document>

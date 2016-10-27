@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class KwoteViewController: UIViewController {
     @IBOutlet weak var quoteLabel: UILabel!
@@ -18,6 +17,7 @@ class KwoteViewController: UIViewController {
     var moviesButton: CategoryButton!
     var inspireButton: CategoryButton!
 
+    @IBOutlet weak var logoImage: UIImageView!
     var imageView: UIImageView?
     var overlay: UIView?
     var settingsView: UIView?
@@ -29,10 +29,48 @@ class KwoteViewController: UIViewController {
         return .lightContent
     }
     
+    override open var shouldAutorotate: Bool {
+        get { return false }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupSettingsView()
-        self.loadQuote()
+        
+        let (kwote, date, image) = KwoteFactory.loadKwote()
+        
+        if let kwote = kwote {
+            self.logoImage.isHidden = true
+            self.loaderIcon.isHidden = true
+            self.displayKwote(kwote: kwote)
+            
+            if let date = date {
+                if Date().timeIntervalSince(date) > 86400 {
+                    self.loadQuote()
+                }
+            } else {
+                self.loadQuote()
+            }
+            
+            if let image = image {
+                self.setBackgroundImage(image: image)
+            }
+        } else {
+            self.loadQuote()
+        }
+        
+        if let settingsCategory = UserDefaults.standard.string(forKey: Property.settingsCategory), let category = Category(rawValue: settingsCategory) {
+            self.category = category
+        }
+        
+        switch self.category {
+        case .Movies:
+            self.moviesButtonPressed()
+        case .Famous:
+            self.famousButtonPressed()
+        case .Inspire:
+            self.inspireButtonPressed()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -70,7 +108,7 @@ class KwoteViewController: UIViewController {
     func setupSettingsView() {
         let settingsBarWidth = CGFloat(300)
         let xPos = (UIScreen.main.bounds.width - settingsBarWidth) / 2
-        let frame = CGRect(x: xPos, y: UIScreen.main.bounds.height - settingsBarWidth, width: 300, height: 80)
+        let frame = CGRect(x: xPos, y: UIScreen.main.bounds.height, width: 300, height: 80)
         let settingsBar = UIView(frame: frame)
         
         self.famousButton = CategoryButton(title: "Famous", icon: "")
@@ -95,6 +133,7 @@ class KwoteViewController: UIViewController {
     
     func famousButtonPressed() {
         self.category = .Famous
+        UserDefaults.standard.setValue(Category.Famous.rawValue, forKey: Property.settingsCategory)
         self.famousButton.isSelected = true
         self.moviesButton.isSelected = false
         self.inspireButton.isSelected = false
@@ -102,6 +141,7 @@ class KwoteViewController: UIViewController {
     
     func moviesButtonPressed() {
         self.category = .Movies
+        UserDefaults.standard.setValue(Category.Movies.rawValue, forKey: Property.settingsCategory)
         self.famousButton.isSelected = false
         self.moviesButton.isSelected = true
         self.inspireButton.isSelected = false
@@ -109,6 +149,7 @@ class KwoteViewController: UIViewController {
     
     func inspireButtonPressed() {
         self.category = .Inspire
+        UserDefaults.standard.setValue(Category.Inspire.rawValue, forKey: Property.settingsCategory)
         self.famousButton.isSelected = false
         self.moviesButton.isSelected = false
         self.inspireButton.isSelected = true
@@ -183,9 +224,8 @@ class KwoteViewController: UIViewController {
                 MovieDBAPI.getMovieBackdropImage(movieName: kwote.author) { (image) in
                     self.refreshButton.isHidden = false
                     self.loaderIcon.isHidden = true
-                    self.quoteLabel.text = kwote.quote
-                    self.authorLabel.text = kwote.author
-                    self.quoteLabel.isHidden = false
+                    self.displayKwote(kwote: kwote)
+                    KwoteFactory.saveKwote(kwote: kwote, image: image)
                     
                     if let image = image {
                         self.setBackgroundImage(image: image)
@@ -197,6 +237,13 @@ class KwoteViewController: UIViewController {
                 self.presentError(message: "Failed to load a new Kwote. Make sure you're connected to the interwebs.")
             }
         }
+    }
+    
+    func displayKwote(kwote: Kwote) {
+        self.logoImage.isHidden = true
+        self.quoteLabel.text = kwote.quote
+        self.authorLabel.text = kwote.author
+        self.quoteLabel.isHidden = false
     }
     
     func showSettings() {

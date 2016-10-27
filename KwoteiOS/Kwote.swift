@@ -7,25 +7,15 @@
 //
 
 import Foundation
-import RealmSwift
 
-class Kwote: Object {
-    dynamic var quote: String = ""
-    dynamic var author: String = ""
-    dynamic var category: String = ""
+class Kwote {
+    var quote: String
+    var author: String
+    var category: String
     
-    convenience init(quote: String, author: String, category: String) {
-        self.init()
+    init(quote: String, author: String, category: String) {
         self.quote = quote
         self.author = author
         self.category = category
-        
-        //self.save()
-    }
-    
-    func save() {
-        guard let realm = try? Realm() else { return }
-        realm.beginWrite()
-        realm.add(self)
     }
 }

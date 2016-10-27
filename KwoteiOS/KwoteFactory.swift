@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum Category: String {
     case Famous = "famous"
@@ -31,5 +32,32 @@ class KwoteFactory {
         api.getKwote(category: category, completion: completion)
     }
     
+    static func saveKwote(kwote: Kwote, image: UIImage? = nil) {
+        UserDefaults.standard.setValue(kwote.author, forKey: Property.author)
+        UserDefaults.standard.setValue(kwote.category, forKey: Property.category)
+        UserDefaults.standard.setValue(kwote.quote, forKey: Property.quote)
+        UserDefaults.standard.setValue(Date(), forKey: Property.date)
+        
+        if let image = image, let imageData = UIImagePNGRepresentation(image) {
+            UserDefaults.standard.setValue(imageData, forKey: Property.image)
+        } else {
+            UserDefaults.standard.setValue(nil, forKey: Property.image)
+        }
+    }
     
+    static func loadKwote() -> (Kwote?, Date?, UIImage?) {
+        guard let author = UserDefaults.standard.string(forKey: Property.author),
+            let category = UserDefaults.standard.string(forKey: Property.category),
+            let quote = UserDefaults.standard.string(forKey: Property.quote),
+            let date = UserDefaults.standard.object(forKey: Property.date) as? Date
+            else { return (nil, nil, nil) }
+        
+        let kwote = Kwote(quote: quote, author: author, category: category)
+        
+        if let imageData = UserDefaults.standard.data(forKey: Property.image), let image = UIImage(data: imageData) {
+            return (kwote, date, image)
+        } else {
+            return (kwote, date, nil)
+        }
+    }
 }

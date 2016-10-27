@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import RealmSwift
 
 class MashapeAPI: KwoteAPI {
     struct Header {
